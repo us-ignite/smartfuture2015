@@ -10,11 +10,21 @@ $app->register(new Silex\Provider\MonologServiceProvider(), array(
   'monolog.logfile' => 'php://stderr',
 ));
 
+// Twig templating system
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+  'twig.path' => __DIR__.'/views',
+));
+
+// For setting the url address
+$static_url = "http://{$_SERVER['SERVER_NAME']}";
+
 // Our web handlers
 
 $app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return 'Hello';
+  //$app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('index.twig', array(
+    'STATIC_URL' => 'http://local-smartfuture2015.com/'
+  ));
 });
 
 $app->run();
