@@ -23,7 +23,7 @@ $static_url = "http://{$_SERVER['SERVER_NAME']}";
 $app->get('/', function() use($app) {
   //$app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig', array(
-    'STATIC_URL' => 'http://local-smartfuture2015.com/'
+    'STATIC_URL' => $static_url //usage {{ STATIC_URL }} in template
   ));
 });
 
