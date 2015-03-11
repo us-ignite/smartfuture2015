@@ -7,6 +7,24 @@ ul.list >li {
 	  margin: 0 16px 8px 0;
 	}
 }
+
+.march-2015-splash .logo-bar div {
+  background-image: url(../img/us_ignite-geni-nsf.png);
+  background-size: auto 90px;
+  background-repeat: no-repeat;
+  margin: auto auto auto auto;
+  height: 90px;
+  width: 475px;
+  position: relative;
+  top: 25px;
+}
+
+.logos-bar {
+	margin: 15px 0 15px 0;
+}
+
+/*******************/
+
 div.dataTables_wrapper {
 	margin-bottom: 1.25em;
 }
