@@ -23,6 +23,9 @@ ul.list >li {
 	margin: 15px 0 15px 0;
 }
 
+.agenda-content p {
+	line-height: 30px;
+}
 /*******************/
 
 div.dataTables_wrapper {
