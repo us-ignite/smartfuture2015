@@ -1,5 +1,4 @@
 <?php
-
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
@@ -16,14 +15,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 ));
 
 // For setting the url address
-$static_url = "http://{$_SERVER['SERVER_NAME']}";
+//$static_url = "http://{$_SERVER['SERVER_NAME']}";
 
 // Our web handlers
 
 $app->get('/', function() use($app) {
   //$app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig', array(
-    'STATIC_URL' => $static_url //usage {{ STATIC_URL }} in template
+    'STATIC_URL' => "http://{$_SERVER['SERVER_NAME']}" //usage {{ STATIC_URL }} in template
   ));
 });
 
