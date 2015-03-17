@@ -26,6 +26,13 @@ $app->get('/', function() use($app) {
   ));
 });
 
+$app->get('/live-stream', function() use($app) {
+  //$app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('live-stream.twig', array(
+    'STATIC_URL' => "http://{$_SERVER['SERVER_NAME']}" //usage {{ STATIC_URL }} in template
+  ));
+});
+
 $app->run();
 
 ?>
