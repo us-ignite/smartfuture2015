@@ -9,6 +9,8 @@
 			e.preventDefault();
 		});
 
+		$(".fluid-vid").fitVids({ customSelector: "iframe[src^='http://player.theplatform.com']"});
+
 		/* Scroll to content when clicking arrow in intro image */
 		$(".down-button").on("click", function (e) {
 			var contentTop = $("#content").offset().top;
